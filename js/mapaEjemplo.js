@@ -8,7 +8,7 @@
       });
       map.addControl({
         position: 'top_right',
-        content: 'MI UBICACIÓN',
+        content: 'Geolocate',
         style: {
           margin: '5px',
           padding: '1px 6px',
