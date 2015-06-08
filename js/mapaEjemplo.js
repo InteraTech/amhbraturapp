@@ -1,17 +1,35 @@
-var map;
+ var map;
     $(document).ready(function(){
       map = new GMaps({
         el: '#map',
+        zoom: 16,
         lat: -12.043333,
-        lng: -77.028333,
-        zoomControl : true,
-        zoomControlOpt: {
-            style : 'SMALL',
-            position: 'TOP_LEFT'
+        lng: -77.028333
+      });
+      map.addControl({
+        position: 'top_right',
+        content: 'MI UBICACIÓN',
+        style: {
+          margin: '5px',
+          padding: '1px 6px',
+          border: 'solid 1px #717B87',
+		  size: '20px',
+          background: '#fff'
         },
-        panControl : false,
-        streetViewControl : false,
-        mapTypeControl: false,
-        overviewMapControl: false
+        events: {
+          click: function(){
+            GMaps.geolocate({
+              success: function(position){
+                map.setCenter(position.coords.latitude, position.coords.longitude);
+              },
+              error: function(error){
+                alert('Geolocation failed: ' + error.message);
+              },
+              not_supported: function(){
+                alert("Your browser does not support geolocation");
+              }
+            });
+          }
+        }
       });
     });
