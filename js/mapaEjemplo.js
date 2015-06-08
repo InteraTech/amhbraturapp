@@ -21,6 +21,21 @@
             GMaps.geolocate({
               success: function(position){
                 map.setCenter(position.coords.latitude, position.coords.longitude);
+				
+				
+				// Creating marker of user location
+              map.addMarker({
+                  lat: position.coords.latitude,
+                  lng: position.coords.longitude,
+                  title: 'Lima',
+                  click: function(e) {
+                    alert('You clicked in this marker');
+                  },
+                  infoWindow: {
+                      content: '<p>You are here!</p>'
+                    }
+            });
+				
               },
               error: function(error){
                 alert('Geolocation failed: ' + error.message);
