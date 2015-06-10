@@ -29,10 +29,10 @@
                   lng: position.coords.longitude,
                   title: 'Lima',
                   click: function(e) {
-                    alert('You clicked in this marker');
+                    alert('Te encuentras aquí');
                   },
                   infoWindow: {
-                      content: '<p>You are here!</p>'
+                      content: '<p>Te encuentras aquí!</p>'
                     }
             });
 				
