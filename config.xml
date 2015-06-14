@@ -2,8 +2,8 @@
 	<widget xmlns = "http://www.w3.org/ns/widgets"
 		xmlns:gap = "http://phonegap.com/ns/1.0"
 		id        = "com.ar.amhbra.interatech"
-		versionCode=""
-		version   = "1.0.1">
+		versionCode="1.2"
+		version   = "1.2">
 		<name>AMHBRA</name>
 		<description> Aplicación oficial de la Asociación Misionera de Hoteles, Bares, Restaurantes y Afines.
 		</description>
